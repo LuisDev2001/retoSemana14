@@ -1,4 +1,4 @@
-• ¿Porque utilizar un framework?
+• ¿Por qué utilizar un framework?
 -Se usa un frameword de javascript para mejorar la escalabilidad del proyecto y tambien
 para acelerar el avance del proyecto, tener una buena estructura y lo mejor de todo buenas
 practicas. En este caso Vue es un framework progresivo y muy bueno para iniciarnos en el mundo
