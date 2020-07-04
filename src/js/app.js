@@ -5,6 +5,11 @@ const app = new Vue({
     url_video: "",
     description: "",
 
+    editTitle: "",
+    editUrl_video: "",
+    editDescription: "",
+    editId: 0,
+
     openSectionAddVideo: false,
     openEditVideoSection: false,
     openDetailVideoSection: true,
@@ -24,8 +29,7 @@ const app = new Vue({
       const card = document.createElement("article");
       card.classList.add("card-video");
 
-      card.innerHTML = `
-          <article class="card-video">
+      card.innerHTML = `  
             <div class="card-video-img">
               <div class="card-video-actions">
                 <div class="edit-btn">
@@ -48,8 +52,22 @@ const app = new Vue({
                 Ver detalle
               </a>
             </div>
-          </article>
         `;
+
+      //Edit video form
+      card.querySelector(".edit-btn").onclick = () => {
+        this.editVideo(video);
+        this.toggleOpenEditVideoSection();
+      };
+
+      //View detail video
+      card.querySelector(".card-video-detail").onclick = () => {
+        this.toggleOpenDetailVideoSection();
+        this.detailTitle = video.title;
+        this.detailUrl_video = video.url_video;
+        this.detailDescription = video.description;
+      };
+
       return card;
     },
     insertCard(card) {
@@ -85,6 +103,31 @@ const app = new Vue({
         })
         .then((videoCreate) => {
           return console.log(videoCreate);
+        });
+    },
+    editVideo(video) {
+      this.editTitle = video.title;
+      this.editUrl_video = video.url_video;
+      this.editDescription = video.description;
+      this.editId = video.id;
+    },
+    submitEditVideo() {
+      fetch(`http://localhost:3000/videos/${this.editId}`, {
+        method: "PUT",
+        body: JSON.stringify({
+          title: this.editTitle,
+          url_video: this.editUrl_video,
+          description: this.editDescription,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (videoEdited) {
+          console.log(videoEdited);
         });
     },
   },
