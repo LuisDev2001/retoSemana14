@@ -70,12 +70,13 @@ const app = new Vue({
         this.detailTitle = video.title;
         this.detailUrl_video = video.url_video;
         this.detailDescription = video.description;
+        this.editId = video.id;
         this.removeAllChilds();
       };
 
       //Eliminar card del DOM y de la bd
       card.querySelector(".delete-btn").onclick = () => {
-        console.log("Click eliminar btn");
+        this.deleteVideo(video);
       };
       return card;
     },
@@ -138,6 +139,11 @@ const app = new Vue({
         .then(function (videoEdited) {
           console.log(videoEdited);
         });
+    },
+    deleteVideo(video) {
+      fetch(`http://localhost:3000/videos/${video.id}`, {
+        method: "DELETE",
+      });
     },
     removeAllChilds() {
       let cardsVideo = Array.from(document.querySelectorAll(".card-video"));
