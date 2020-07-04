@@ -7,7 +7,7 @@ Los frameworks mas usados son:
 
 - React js
 - Vue js
-- Angular 9
+- Angular
 
 • ¿Cuales son los beneficios de un framework?
 -Los beneficios de un framework de javascript como Vue.js es facilitarnos metodos, para hacer mas practica el desarrollo sin tantas vueltas como en vanilla js. Otro de los beneficios es que si dominas vanilla js te podras pasear en cualquier framework de js en este caso Vue es un muy buen
