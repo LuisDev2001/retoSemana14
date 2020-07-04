@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Videos CRUD</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="./src/css/styles.css" />
+  </head>
+  <body>
+    <section id="app">
+      <header class="header">
+        <h1 class="header__title">Video Pacha Tv</h1>
+      </header>
+
+      <section class="btnAgregarVideo">
+        <button class="btn btn-primary">Agregar video</button>
+      </section>
+      <!-- Section add video -->
+      <section class="add-video" v-if="openSectionAddVideo">
+        <h2 class="add-video__title">Agregar video</h2>
+
+        <form class="add-video__form">
+          <input
+            class="add-video__input title"
+            required
+            type="text"
+            name="title"
+            placeholder="Titulo"
+          />
+          <input
+            class="add-video__input url-video"
+            required
+            type="text"
+            name="url-video"
+            placeholder="url-video"
+          />
+
+          <textarea
+            class="add-video__input description"
+            required
+            name="description"
+            cols="30"
+            rows="10"
+            placeholder="Descripción"
+          ></textarea>
+
+          <button class="btn btn--primary" type="submit">Agregar</button>
+          <a href="./index.html">
+            <div class="btn btn--secondary">Cancelar</div>
+          </a>
+        </form>
+      </section>
+    </section>
+
+    <!-- Vue js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+    <!-- fontawesome -->
+    <script
+      src="https://kit.fontawesome.com/b7301c403c.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- my scripts -->
+    <script src="./src/js/app.js" type="module"></script>
+  </body>
+</html>

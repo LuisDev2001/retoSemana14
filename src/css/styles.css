@@ -1,0 +1,40 @@
+:root {
+  /*Fuente*/
+  --font-roboto: "Roboto", sans-serif;
+  --primary-color: #ff5252;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-roboto);
+}
+
+/*Reset styles*/
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/*Header*/
+.header {
+  width: 100%;
+  height: 60px;
+  box-shadow: 0 0 10px rgba(53, 53, 53, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 6%;
+  background: var(--primary-color);
+}
