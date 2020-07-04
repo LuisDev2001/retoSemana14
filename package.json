@@ -1,0 +1,14 @@
+{
+  "name": "videocrudvuejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "watch:json": "json-server --watch ./db.json"
+  },
+  "author": "Luis Quispe <luisqrja@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "json-server": "^0.16.1"
+  }
+}
