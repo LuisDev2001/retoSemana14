@@ -15,51 +15,66 @@
   <body>
     <section id="app">
       <header class="header">
-        <h1 class="header__title">VIDEO PACHA TV</h1>
-        <button class="btn btn-primary">Agregar video</button>
-        {{getVideo()}}
+        <h1 class="header-title">VIDEO PACHA TV</h1>
+        <button class="btn btn-primary" @click="toggleOpenAddVideoSection">
+          Agregar video
+        </button>
       </header>
 
       <!-- Section add video -->
       <section class="add-video" v-if="openSectionAddVideo">
-        <h2 class="add-video__title">Agregar video</h2>
+        <div>
+          <h2 class="add-video-title">Agregar video</h2>
 
-        <form class="add-video__form">
-          <input
-            class="add-video__input title"
-            required
-            type="text"
-            name="title"
-            placeholder="Titulo"
-          />
-          <input
-            class="add-video__input url-video"
-            required
-            type="text"
-            name="url-video"
-            placeholder="url-video"
-          />
+          <form class="add-video-form" @submit.prevent="submitVideo">
+            <div>
+              <input
+                class="add-video-input title"
+                required
+                type="text"
+                name="title"
+                placeholder="Titulo"
+                v-model="title"
+              />
+              <input
+                class="add-video-input url-video"
+                required
+                type="text"
+                name="url-video"
+                placeholder="url-video"
+                v-model="url_video"
+              />
+            </div>
+            <div class="description-content">
+              <textarea
+                class="add-video-input description"
+                required
+                name="description"
+                cols="30"
+                rows="10"
+                placeholder="Descripción"
+                v-model="description"
+              ></textarea>
+            </div>
 
-          <textarea
-            class="add-video__input description"
-            required
-            name="description"
-            cols="30"
-            rows="10"
-            placeholder="Descripción"
-          ></textarea>
-
-          <button class="btn btn--primary" type="submit">Agregar</button>
-          <a href="./index.html">
-            <div class="btn btn--secondary">Cancelar</div>
-          </a>
-        </form>
+            <div class="buttons-actions">
+              <button class="btn btn-primary" type="submit">Agregar</button>
+              <a href="./index.html" class="btn btn-secondary">
+                Cancelar
+              </a>
+            </div>
+          </form>
+        </div>
       </section>
 
       <!-- Section listar video -->
-      <section class="list-video">
+      <section
+        class="list-video"
+        v-if="(!openSectionAddVideo && !openEditVideoSection && openDetailVideoSection)"
+      >
         <h2 class="list-video-title">Lista de video</h2>
         <div class="grid" id="js-list-video">
+          {{getVideo()}}
           <!-- <article class="card-video">
             <div class="card-video-img">
               <div class="card-video-actions">

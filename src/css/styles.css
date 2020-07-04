@@ -51,6 +51,28 @@ a {
   color: var(--white-color);
 }
 
+.header-title {
+  font-size: 36px;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.btn {
+  background: none;
+  border: 0;
+  outline: none;
+}
+
+.btn.btn-primary {
+  color: var(--white-color);
+  font-size: 16px;
+  font-weight: bold;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+}
+.btn.btn-secondary {
+  background: var(--gray-color);
+  color: #222;
+}
 /*Section listar video*/
 .list-video {
   width: 100%;
@@ -167,4 +189,78 @@ a {
   background: var(--color-btn);
   font-size: 12px;
   color: var(--white-color);
+}
+
+/*Añadir video*/
+.add-video {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 100px 0;
+}
+
+.add-video div:first-child {
+  width: 590px;
+}
+
+.add-video-title {
+  padding: 0 0 15px 0;
+  margin: 0 0 26px 0;
+  border-bottom: 1px solid var(--gray-color);
+}
+
+.add-video-input {
+  border: 1px solid var(--gray-color);
+  padding: 13px;
+  outline: none;
+  width: 100%;
+}
+
+.add-video-input:focus {
+  border: 1px solid var(--color-btn);
+}
+
+.add-video-input:first-child {
+  margin: 0 20px 0 0;
+}
+
+.description-content .add-video-input {
+  margin: 0;
+  font-family: var(--font-roboto);
+}
+
+.add-video-form {
+  width: 100%;
+}
+
+.add-video-form div:first-child {
+  margin: 0 0 20px 0;
+}
+
+.add-video-form div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-actions {
+  margin: 26px 0 0 0;
+}
+
+.buttons-actions .btn.btn-primary {
+  margin: 0 20px 0 0;
+  background: var(--primary-color);
+}
+.buttons-actions .btn.btn-primary,
+.buttons-actions .btn.btn.btn-secondary {
+  width: 121px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: unset;
+  font-size: 14px;
+  font-weight: normal;
 }

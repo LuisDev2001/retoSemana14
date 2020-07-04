@@ -6,10 +6,18 @@ const app = new Vue({
     description: "",
 
     openSectionAddVideo: false,
+    openEditVideoSection: false,
+    openDetailVideoSection: true,
   },
   methods: {
     toggleOpenAddVideoSection() {
       this.openSectionAddVideo = !this.openSectionAddVideo;
+    },
+    toggleOpenEditVideoSection() {
+      this.openEditVideoSection = !this.openEditVideoSection;
+    },
+    toggleOpenDetailVideoSection() {
+      this.openDetailVideoSection = !this.openDetailVideoSection;
     },
     printVideo(videos) {
       let containerListVideo = document.getElementById("js-list-video");
@@ -49,6 +57,26 @@ const app = new Vue({
         })
         .then((videos) => {
           this.printVideo(videos);
+        });
+    },
+    submitVideo() {
+      console.log("Click, añadir");
+      fetch("http://localhost:3000/videos", {
+        method: "POST",
+        body: JSON.stringify({
+          title: this.title,
+          url_video: this.url_video,
+          description: this.description,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((response) => {
+          return response.json();
+        })
+        .then((videoCreate) => {
+          return console.log(videoCreate);
         });
     },
   },
