@@ -84,6 +84,9 @@
 
         <figure class="detail-video-container">
           <img class="detail-video" :src="detailUrl_video" alt="Img" />
+          <div class="play-icon">
+            <i class="fas fa-play"></i>
+          </div>
         </figure>
 
         <div class="detail-detail-container">
@@ -147,6 +150,32 @@
           </form>
         </div>
       </section>
+
+      <!-- modal de eliminar data -->
+      <div class="gray-out">
+        <div class="content-modal">
+          <div class="modal-eliminate-video__header">
+            <h2 class="modal-eliminate-video__title">Eliminar video</h2>
+            <span class="modal-eliminate-video__close">
+              <i class="fas fa-times"></i>
+            </span>
+          </div>
+
+          <div class="modal-eliminate-video__body">
+            <p class="modal-eliminate-video__message">
+              ¿Estas seguro que quieres eliminar este video?
+            </p>
+            <div class="buttons-actions">
+              <button class="btn btn-primary" id="deleteCards" type="submit">
+                Eliminar
+              </button>
+              <a href="./index.html" class="btn btn-secondary">
+                Cancelar
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Vue js CDN -->

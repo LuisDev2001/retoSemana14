@@ -74,9 +74,25 @@ const app = new Vue({
         this.removeAllChilds();
       };
 
-      //Eliminar card del DOM y de la bd
+      //Eliminar card de la bd
       card.querySelector(".delete-btn").onclick = () => {
-        this.deleteVideo(video);
+        const modalDelete = document.querySelector(".gray-out");
+        const closeIconModal = document.querySelector(
+          ".modal-eliminate-video__close"
+        );
+        const btnDelteCard = document.querySelector("#deleteCards");
+        //Appear modal delete
+        modalDelete.classList.add("active");
+
+        //Close event modal delete
+        closeIconModal.addEventListener("click", () => {
+          modalDelete.classList.remove("active");
+        });
+
+        //Delete event of bd
+        btnDelteCard.addEventListener("click", () => {
+          this.deleteVideo(video);
+        });
       };
       return card;
     },
