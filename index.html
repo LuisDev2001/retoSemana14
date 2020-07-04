@@ -15,12 +15,11 @@
   <body>
     <section id="app">
       <header class="header">
-        <h1 class="header__title">Video Pacha Tv</h1>
+        <h1 class="header__title">VIDEO PACHA TV</h1>
+        <button class="btn btn-primary">Agregar video</button>
+        {{getVideo()}}
       </header>
 
-      <section class="btnAgregarVideo">
-        <button class="btn btn-primary">Agregar video</button>
-      </section>
       <!-- Section add video -->
       <section class="add-video" v-if="openSectionAddVideo">
         <h2 class="add-video__title">Agregar video</h2>
@@ -55,6 +54,42 @@
             <div class="btn btn--secondary">Cancelar</div>
           </a>
         </form>
+      </section>
+
+      <!-- Section listar video -->
+      <section class="list-video">
+        <h2 class="list-video-title">Lista de video</h2>
+        <div class="grid" id="js-list-video">
+          <!-- <article class="card-video">
+            <div class="card-video-img">
+              <div class="card-video-actions">
+                <div class="edit-btn">
+                  <i class="fas fa-pen"></i>
+                </div>
+                <div class="delete-btn">
+                  <i class="fas fa-times"></i>
+                </div>
+              </div>
+              <div class="play-icon">
+                <i class="fas fa-play"></i>
+              </div>
+              <img src="https://picsum.photos/200/300" alt="img" />
+            </div>
+            <div class="card-video-information">
+              <h3 class="card-video-title">Titulo de prueba</h3>
+              <span class="card-video-view">0 visualizaciones</span>
+              <p class="card-video-description">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Dolores a modi aut, aliquam odio similique placeat expedita?
+                Distinctio, ex quis! Dignissimos, ipsa delectus? Facere
+                doloribus esse maiores laudantium omnis molestiae.
+              </p>
+              <a href="#" class="card-video-detail">
+                Ver detalle
+              </a>
+            </div>
+          </article> -->
+        </div>
       </section>
     </section>
 

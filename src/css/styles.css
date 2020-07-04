@@ -2,6 +2,9 @@
   /*Fuente*/
   --font-roboto: "Roboto", sans-serif;
   --primary-color: #ff5252;
+  --white-color: #ffffff;
+  --gray-color: #c4c4c4;
+  --color-btn: #00c1aa;
 }
 
 * {
@@ -27,6 +30,14 @@ h6 {
   list-style: none;
 }
 
+img {
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
 /*Header*/
 .header {
   width: 100%;
@@ -37,4 +48,123 @@ h6 {
   justify-content: space-between;
   padding: 0 6%;
   background: var(--primary-color);
+  color: var(--white-color);
+}
+
+/*Section listar video*/
+.list-video {
+  width: 100%;
+  height: auto;
+  padding: 0 6%;
+  margin: 48px 0;
+}
+
+.list-video-title {
+  margin: 0 0 36px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  grid-gap: 1rem;
+}
+
+/*Card video*/
+.card-video {
+  width: 100%;
+  transition: 0.3s ease box-shadow;
+  border: 1px solid var(--gray-color);
+  position: relative;
+}
+.card-video:hover {
+  box-shadow: 0px 0px 8px rgba(146, 146, 146, 0.53);
+}
+/*actions btn*/
+.card-video-img {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-video-actions {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  background: transparent;
+  position: absolute;
+  top: 6px;
+  left: 0;
+}
+
+.edit-btn,
+.delete-btn {
+  background: var(--gray-color);
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.edit-btn i,
+.delete-btn i {
+  color: var(--white-color);
+  font-size: 0.7rem;
+}
+
+.play-icon {
+  position: absolute;
+}
+
+.play-icon i {
+  font-size: 3.5rem;
+  color: var(--white-color);
+  transition: 0.3s ease color;
+}
+
+.card-video:hover .play-icon i {
+  color: var(--primary-color);
+}
+
+.card-video img {
+  width: 100%;
+  height: 190px;
+}
+
+.card-video-information {
+  padding: 9px 17px 16px 12px;
+  background: var(--white-color);
+}
+.card-video-title,
+.card-video-view {
+  margin: 0 0 3px 0;
+}
+.card-video-title {
+  font-size: 14px;
+}
+
+.card-video-view {
+  font-size: 11px;
+}
+
+.card-video-description {
+  font-size: 12px;
+  margin: 0 0 6px 0;
+}
+
+.card-video-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 34px;
+  background: var(--color-btn);
+  font-size: 12px;
+  color: var(--white-color);
 }
