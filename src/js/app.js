@@ -19,10 +19,12 @@ const app = new Vue({
     toggleOpenDetailVideoSection() {
       this.openDetailVideoSection = !this.openDetailVideoSection;
     },
-    printVideo(videos) {
-      let containerListVideo = document.getElementById("js-list-video");
-      for (const video of videos) {
-        containerListVideo.innerHTML += `
+    createCard(video) {
+      const { title, url_video, description, id } = video;
+      const card = document.createElement("article");
+      card.classList.add("card-video");
+
+      card.innerHTML = `
           <article class="card-video">
             <div class="card-video-img">
               <div class="card-video-actions">
@@ -36,19 +38,23 @@ const app = new Vue({
               <div class="play-icon">
                 <i class="fas fa-play"></i>
               </div>
-              <img src="${video.url_video}" alt="img" />
+              <img src="${url_video}" alt="img" />
             </div>
             <div class="card-video-information">
-              <h3 class="card-video-title">${video.title}</h3>
-              <span class="card-video-view">0 visualizaciones</span>
-              <p class="card-video-description">${video.description}</p>
+              <h3 class="card-video-title">${title}</h3>
+              <span class="card-video-view">${id} visualizaciones</span>
+              <p class="card-video-description">${description}</p>
               <a href="#" class="card-video-detail">
                 Ver detalle
               </a>
             </div>
           </article>
         `;
-      }
+      return card;
+    },
+    insertCard(card) {
+      const containerList = document.querySelector("#js-list-video");
+      containerList.appendChild(card);
     },
     getVideo() {
       fetch("http://localhost:3000/videos")
@@ -56,7 +62,9 @@ const app = new Vue({
           return response.json();
         })
         .then((videos) => {
-          this.printVideo(videos);
+          videos.forEach((video) => {
+            this.insertCard(this.createCard(video));
+          });
         });
     },
     submitVideo() {

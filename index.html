@@ -106,6 +106,24 @@
           </article> -->
         </div>
       </section>
+
+      <!-- Section detail data -->
+      <section class="detail" v-if="!openDetailVideoSection">
+        <h2 class="detail-title">{{ detailTitle }}</h2>
+
+        <figure class="detail-video-container">
+          <img class="detail-video" :src="detailUrl_video" alt="Img" />
+        </figure>
+
+        <div class="detail-detail-container">
+          <h3 class="detail-sub-title">{{ detailTitle }}</h3>
+          <p class="detail-views">0 visualizaciones</p>
+
+          <p class="detail__description">
+            {{ detailDescription }}
+          </p>
+        </div>
+      </section>
     </section>
 
     <!-- Vue js CDN -->
