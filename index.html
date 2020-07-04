@@ -75,40 +75,11 @@
         <h2 class="list-video-title">Lista de video</h2>
         <div class="grid" id="js-list-video">
           {{getVideo()}}
-          <!-- <article class="card-video">
-            <div class="card-video-img">
-              <div class="card-video-actions">
-                <div class="edit-btn">
-                  <i class="fas fa-pen"></i>
-                </div>
-                <div class="delete-btn">
-                  <i class="fas fa-times"></i>
-                </div>
-              </div>
-              <div class="play-icon">
-                <i class="fas fa-play"></i>
-              </div>
-              <img src="https://picsum.photos/200/300" alt="img" />
-            </div>
-            <div class="card-video-information">
-              <h3 class="card-video-title">Titulo de prueba</h3>
-              <span class="card-video-view">0 visualizaciones</span>
-              <p class="card-video-description">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Dolores a modi aut, aliquam odio similique placeat expedita?
-                Distinctio, ex quis! Dignissimos, ipsa delectus? Facere
-                doloribus esse maiores laudantium omnis molestiae.
-              </p>
-              <a href="#" class="card-video-detail">
-                Ver detalle
-              </a>
-            </div>
-          </article> -->
         </div>
       </section>
 
       <!-- Section detail data -->
-      <section class="detail" v-if="!openDetailVideoSection">
+      <section class="detail-section" v-if="(!openDetailVideoSection)">
         <h2 class="detail-title">{{ detailTitle }}</h2>
 
         <figure class="detail-video-container">
@@ -122,6 +93,12 @@
           <p class="detail__description">
             {{ detailDescription }}
           </p>
+          <div class="goHome">
+            <a href="./index.html" class="btn btn-secondary">
+              <i class="fas fa-arrow-left"></i>
+              Regresar a la lista de video
+            </a>
+          </div>
         </div>
       </section>
 

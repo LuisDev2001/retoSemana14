@@ -10,6 +10,10 @@ const app = new Vue({
     editDescription: "",
     editId: 0,
 
+    detailTitle: "",
+    detailUrl_video: "",
+    detailDescription: "",
+
     openSectionAddVideo: false,
     openEditVideoSection: false,
     openDetailVideoSection: true,
@@ -66,8 +70,13 @@ const app = new Vue({
         this.detailTitle = video.title;
         this.detailUrl_video = video.url_video;
         this.detailDescription = video.description;
+        this.removeAllChilds();
       };
 
+      //Eliminar card del DOM y de la bd
+      card.querySelector(".delete-btn").onclick = () => {
+        console.log("Click eliminar btn");
+      };
       return card;
     },
     insertCard(card) {
@@ -129,6 +138,12 @@ const app = new Vue({
         .then(function (videoEdited) {
           console.log(videoEdited);
         });
+    },
+    removeAllChilds() {
+      let cardsVideo = Array.from(document.querySelectorAll(".card-video"));
+      cardsVideo.forEach((cardVideo) => {
+        cardVideo.style.display = "none";
+      });
     },
   },
 });
